@@ -4,66 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClimateSentinels</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
+    <!-- Preconnect and Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+
     <!-- Leaflet and Chart.js Libraries -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        @font-face {
+            font-family: 'CustomFont'; /* This is the name you'll use in CSS */
+            src: url('fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype'); /* Path to the .ttf file */
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'CustomFont', sans-serif; /* Use the custom font with a fallback */
+            font-size: 16px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 1); /* Dark background */
+            font-weight: 600;
+            text-align: center !important;
+        }
+
+        nav {
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            align-items: center;
+            padding: 10px; /* Some padding for navbar */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for the navbar */
+        }
+
+        .nav {
+            padding-left: 0; /* Remove default padding */
+            margin-bottom: 0;
+            list-style: none; /* Remove bullets */
+            display: flex;
+            justify-content: center; /* Center the navigation */
+            gap: 100px; /* Increased gap between items */
+        }
+
+        .nav li {
+            display: inline-block; /* Display items in a single line */
+        }
+
+        .hoverable {
+            display: inline-block;
+            position: relative;
+            color: white;
+            text-decoration: none;
+            transition-duration: 0.3s;
+            transition-property: transform;
+        }
+
+        .hoverable:before {
+            position: absolute;
+            pointer-events: none;
+            z-index: -1;
+            content: '';
+            top: 150%; /* Move shadow further below the text */
+            left: 5%;
+            height: 10px;
+            width: 90%;
+            opacity: 0;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+            transition-duration: 0.3s;
+        }
+
+        .hoverable:hover, .hoverable:active, .hoverable:focus {
+            transform: translateY(-5px);
+        }
+
+        .hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        /* Add spacing below the navbar to avoid affecting shadow */
+        .image-below-navbar {
+            margin-top: 20px; /* Space between the image and the navbar */
+            width: 70%; /* Set the width of the image */
+            height: 40%; /* Keep the height proportional */
+        }
+
+        /* Map styling */
+        #map-container {
+            margin-top: 30px;
+            width: 85%; /* Decreased width to 85% of the container */
+            height: 500px; /* Height of the map */
+            margin-left: auto; /* Center the map horizontally */
+            margin-right: auto;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <!-- Bootstrap and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <!-- Carousel starts here -->
-    <div class="carousel slide" data-bs-ride="carousel" id="pic-slides">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#pic-slides" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#pic-slides" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#pic-slides" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#pic-slides" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://console.kr-asia.com/wp-content/uploads/2023/04/climate-change-concept-collage-scaled.jpg" class="d-block w-100" alt="Climate Change">
-                <div class="carousel-caption">
-                    <strong><h2>Climate Change and Natural Disasters in Southeast Asia</h2></strong>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://afrital.org/wp-content/uploads/2024/07/flood.jpg" class="d-block w-100" alt="Flood in Southeast Asia">
-                <div class="carousel-caption">
-                    <strong><h2>The Impact of Floods in Southeast Asia</h2></strong>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://duet-cdn.vox-cdn.com/thumbor/0x0:2048x1152/1200x800/filters:focal(1024x576:1025x577):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/7038611/Neoguri_Jul_7_2014_0730Z_EVL.png" class="d-block w-100" alt="Storm in Southeast Asia">
-                <div class="carousel-caption">
-                    <strong><h2>Severe Storms and Their Effects on the Region</h2></strong>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://live-production.wcms.abc-cdn.net.au/71aeeba3fe5f28c27505162566149cea?impolicy=wcms_crop_resize&cropH=1989&cropW=2991&xPos=0&yPos=8&width=862&height=575" class="d-block w-100" alt="Earthquake in Southeast Asia">
-                <div class="carousel-caption">
-                    <strong><h2>Earthquakes Shaking Southeast Asia</h2></strong>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#pic-slides" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#pic-slides" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
+    <!-- Navbar -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a id="len1" class="hoverable" href="#">Home</a></li>
+              <li><a id="len2" class="hoverable" href="#">Climate</a></li>
+              <li><a id="len3" class="hoverable" href="#">Socio-Economic</a></li>
+              <li><a id="len4" class="hoverable" href="#">Women</a></li>
+              <li><a id="len5" class="hoverable" href="#">XYZ</a></li>
+            </ul>
+          </div>
+        </nav>
     </div>
-    <!-- Carousel ends here -->
-    
-    <!-- Map container with a 10% gap -->
+
+    <!-- Image just below the navbar with a smaller size -->
+    <img src="didyouknow.jpg" alt="Placeholder Image" class="image-below-navbar">
+
+    <!-- Map container below the image -->
     <div id="map-container">
         <div id="map"></div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Map Script -->
+    <script>
+        // Initialize the map and set bounds and zoom limits
+        var map = L.map('map', {
+            center: [4.2105, 101.9758],  // Center on Southeast Asia
+            zoom: 1,
+            maxBounds: [[-11.087886, 95.152344], [26.115986, 130.517578]], // Define the bounds
+            minZoom: 1,  // Set minimum zoom
+            maxZoom: 8,  // Set maximum zoom to avoid zooming in too much
+            worldCopyJump: false
+        });
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const countries = {
+            "Indonesia": { lat: -0.7893, lon: 113.9213, disasters: {"Earthquake": 136, "Flood": 247, "Landslide": 64, "Volcanic Activity": 61, "Storm": 14 }},
+            "Philippines": { lat: 12.8797, lon: 121.7740, disasters: {"Earthquake": 40, "Flood": 156, "Landslide": 31, "Volcanic Activity": 29, "Storm": 377 }},
+            "Cambodia": { lat: 12.5657, lon: 104.9910, disasters: {"Earthquake": 0, "Flood": 21, "Landslide": 0, "Volcanic Activity": 0, "Storm": 6 }},
+            "Laos": { lat: 19.8563, lon: 102.4955, disasters: {"Earthquake": 0, "Flood": 28, "Landslide": 0, "Volcanic Activity": 0, "Storm": 11 }},
+            "Myanmar": { lat: 21.9162, lon: 95.9560, disasters: {"Earthquake": 10, "Flood": 36, "Landslide": 10, "Volcanic Activity": 0, "Storm": 21 }},
+            "Malaysia": { lat: 4.2105, lon: 101.9758, disasters: {"Earthquake": 2, "Flood": 65, "Landslide": 4, "Volcanic Activity": 0, "Storm": 8 }},
+            "Thailand": { lat: 15.8700, lon: 100.9925, disasters: {"Earthquake": 4, "Flood": 87, "Landslide": 3, "Volcanic Activity": 0, "Storm": 42 }},
+            "Timor-Leste": { lat: -8.8742, lon: 125.7275, disasters: {"Earthquake": 1, "Flood": 6, "Landslide": 0, "Volcanic Activity": 0, "Storm": 2 }},
+            "Vietnam": { lat: 14.0583, lon: 108.2772, disasters: {"Earthquake": 0, "Flood": 96, "Landslide": 6, "Volcanic Activity": 0, "Storm": 127 }}
+        };
+
+        // Function to create pie chart with adjusted canvas size
+        function createPieChart(data, title) {
+            var ctx = document.createElement('canvas');
+            ctx.width = 250;  // Adjusted canvas width
+            ctx.height = 200; // Adjusted canvas height
+            document.body.appendChild(ctx);
+
+            var chart = new Chart(ctx.getContext('2d'), {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(data),
+                    datasets: [{
+                        data: Object.values(data),
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                        borderColor: 'white',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true, // Maintain the chart's aspect ratio
+                    title: { display: true, text: title },
+                    legend: { position: 'top', labels: { boxWidth: 10, padding: 5 } }, // Adjust legend settings
+                    layout: {
+                        padding: {
+                            left: 5,
+                            right: 5,
+                            top: 5,
+                            bottom: 5
+                        }
+                    }
+                }
+            });
+            return ctx;
+        }
+
+        // Place markers and bind popup with pie charts
+        Object.keys(countries).forEach(function (key) {
+            var country = countries[key];
+            var marker = L.marker([country.lat, country.lon]).addTo(map);
+            marker.on('click', function () {
+                var chart = createPieChart(country.disasters, key);
+                marker.bindPopup(chart, { minWidth: 300, maxWidth: 300 }).openPopup(); // Adjusted popup width
+            });
+        });
+    </script>
 </body>
 </html>
-
