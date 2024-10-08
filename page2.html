@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Factors for Countries</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            margin-top: 30px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 2.5rem;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 400px; /* Set a minimum height */
+            padding: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .card-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            max-width: 180px;
+            border-radius: 10px;
+            background-color: #333;
+            padding: 5px;
+        }
+
+        .aspect-section, .causes-section {
+            text-align: left;
+        }
+
+        .aspect-list, .causes-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+            color: #ffffff; /* Change list items to white */
+        }
+
+        .aspect-list li, .causes-list li {
+            margin-bottom: 5px;
+        }
+
+        .checkbox-inline {
+            margin-right: 5px;
+        }
+
+        /* Flexbox layout for image and aspects side by side */
+        .image-aspect-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        /* Align aspects and causes in columns */
+        .aspects-causes-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        /* Adjust card size to fit content */
+        .col-md-4 {
+            margin-bottom: 30px; /* Increased margin for spacing */
+        }
+
+        .card-title {
+            color: #FFDD00;
+        }
+
+        h6 {
+            color: #FFDD00;
+        }
+
+        input[type="checkbox"] {
+            accent-color: #FFDD00;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title Section -->
+    <h1>Climate Factors</h1>
+
+    <!-- Card Layout Section -->
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- Myanmar Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Myanmar</h5>
+                        
+                        <!-- Image and Aspects Section Side by Side -->
+                        <div class="image-aspect-wrapper">
+                            <!-- Image Section -->
+                            <div class="image-section">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flag_of_Myanmar.svg/1920px-Flag_of_Myanmar.svg.png" alt="Myanmar Image">
+                            </div>
+
+                            <!-- Aspects and Causes Section -->
+                            <div class="aspects-causes-wrapper">
+                                <!-- Aspects Section -->
+                                <div class="aspect-section">
+                                    <h6>Aspects</h6>
+                                    <ul class="aspect-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Cyclonic Storms</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Tsunamis</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Floods</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Forest Fires</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Social Vulnerability</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Causes Section -->
+                                <div class="causes-section">
+                                    <h6>Causes</h6>
+                                    <ul class="causes-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Sea Levels</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Deforestation</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Climate Change</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Urbanization</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Poor Infrastructure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indonesia Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Indonesia</h5>
+                        
+                        <div class="image-aspect-wrapper">
+                            <div class="image-section">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/1920px-Flag_of_Indonesia.svg.png" alt="Indonesia Flag">
+                            </div>
+
+                            <div class="aspects-causes-wrapper">
+                                <div class="aspect-section">
+                                    <h6>Aspects</h6>
+                                    <ul class="aspect-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Forest Fires</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Earthquakes</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Tsunamis</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Floods</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Volcanic Activity</li>
+                                    </ul>
+                                </div>
+
+                                <div class="causes-section">
+                                    <h6>Causes</h6>
+                                    <ul class="causes-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Climate Change</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Urbanization</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Sea Levels</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Deforestation</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Poor Infrastructure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philippines Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Philippines</h5>
+                        
+                        <div class="image-aspect-wrapper">
+                            <div class="image-section">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/1920px-Flag_of_the_Philippines.svg.png" alt="Philippines Image">
+                            </div>
+
+                            <div class="aspects-causes-wrapper">
+                                <div class="aspect-section">
+                                    <h6>Aspects</h6>
+                                    <ul class="aspect-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Typhoons</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Floods</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Earthquakes</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Volcanic Eruptions</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Storm Surges</li>
+                                    </ul>
+                                </div>
+
+                                <div class="causes-section">
+                                    <h6>Causes</h6>
+                                    <ul class="causes-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Deforestation</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Climate Change</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Poor Infrastructure</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Urbanization</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Illegal Logging</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vietnam Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vietnam</h5>
+                        
+                        <div class="image-aspect-wrapper">
+                            <div class="image-section">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1920px-Flag_of_Vietnam.svg.png" alt="Vietnam Image">
+                            </div>
+
+                            <div class="aspects-causes-wrapper">
+                                <div class="aspect-section">
+                                    <h6>Aspects</h6>
+                                    <ul class="aspect-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Cyclonic Storms</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Floods</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Droughts</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Landslides</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Storm Surges</li>
+                                    </ul>
+                                </div>
+
+                                <div class="causes-section">
+                                    <h6>Causes</h6>
+                                    <ul class="causes-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Climate Change</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Urbanization</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Sea Levels</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Poor Infrastructure</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Industrialization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thailand Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Thailand</h5>
+                        
+                        <div class="image-aspect-wrapper">
+                            <div class="image-section">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/1920px-Flag_of_Thailand.svg.png" alt="Thailand Image">
+                            </div>
+
+                            <div class="aspects-causes-wrapper">
+                                <div class="aspect-section">
+                                    <h6>Aspects</h6>
+                                    <ul class="aspect-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Floods</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Tsunamis</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Cyclonic Storms</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Droughts</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Landslides</li>
+                                    </ul>
+                                </div>
+
+                                <div class="causes-section">
+                                    <h6>Causes</h6>
+                                    <ul class="causes-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Deforestation</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Sea Levels</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Climate Change</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Urbanization</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Poor Infrastructure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
