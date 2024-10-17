@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClimateSentinels</title>
-    
+
     <!-- Preconnect and Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,94 +17,115 @@
     
     <style>
         @font-face {
-            font-family: 'CustomFont'; /* This is the name you'll use in CSS */
-            src: url('fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype'); /* Path to the .ttf file */
+            font-family: 'CustomFont';
+            src: url('fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
             font-weight: bold;
             font-style: normal;
         }
 
         body {
-            font-family: 'CustomFont', sans-serif; /* Use the custom font with a fallback */
+            font-family: 'CustomFont', sans-serif;
             font-size: 16px;
             color: #fff;
-            background-color: rgba(0, 0, 0, 1); /* Dark background */
+            background-color: #000; /* Black background */
             font-weight: 600;
-            text-align: center !important;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* Navbar Styling */
         nav {
             text-transform: uppercase;
             display: flex;
-            justify-content: center; /* Center items horizontally */
+            justify-content: space-between;
             align-items: center;
-            padding: 10px; /* Some padding for navbar */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for the navbar */
+            padding: 5px 20px; /* Smaller padding for smaller height */
+            background-color: #4e60ef; /* Blue color for the navbar */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 45px; /* Reduced navbar height */
         }
 
-        .nav {
-            padding-left: 0; /* Remove default padding */
-            margin-bottom: 0;
-            list-style: none; /* Remove bullets */
+        .nav-links {
+            list-style: none;
             display: flex;
-            justify-content: center; /* Center the navigation */
-            gap: 100px; /* Increased gap between items */
+            gap: 20px; /* Reduced gap between links */
         }
 
-        .nav li {
-            display: inline-block; /* Display items in a single line */
-        }
-
-        .hoverable {
+        .nav-links li {
             display: inline-block;
-            position: relative;
-            color: white;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            transition-duration: 0.3s;
-            transition-property: transform;
+            color: #fff;
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
         }
 
-        .hoverable:before {
-            position: absolute;
-            pointer-events: none;
-            z-index: -1;
-            content: '';
-            top: 150%; /* Move shadow further below the text */
-            left: 5%;
-            height: 10px;
-            width: 90%;
-            opacity: 0;
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
-            transition-duration: 0.3s;
+        .nav-links a:hover {
+            background-color: #5C6BC0;
+            color: #fff;
+            border-radius: 5px;
         }
 
-        .hoverable:hover, .hoverable:active, .hoverable:focus {
-            transform: translateY(-5px);
+        /* Main Section */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 20px;
+            flex-grow: 1;
         }
 
-        .hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before {
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
-        /* Add spacing below the navbar to avoid affecting shadow */
-        .image-below-navbar {
-            margin-top: 20px; /* Space between the image and the navbar */
-            width: 70%; /* Set the width of the image */
-            height: 40%; /* Keep the height proportional */
-        }
-
-        /* Map styling */
+        /* Map container */
         #map-container {
-            margin-top: 30px;
-            width: 85%; /* Decreased width to 85% of the container */
-            height: 500px; /* Height of the map */
-            margin-left: auto; /* Center the map horizontally */
-            margin-right: auto;
+            flex-grow: 1;
+            width: 60%;
+            height: 60vh;
+            background-color: #0D0D0D;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
         }
 
         #map {
             width: 100%;
             height: 100%;
+        }
+
+        /* Pie chart card */
+        #chart-card {
+            width: 30%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Chart canvas */
+        #disasterChart {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #4e60ef;
+            padding: 10px; /* Reduced padding */
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
         }
     </style>
 
@@ -114,37 +135,46 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="container-fluid">
-        <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <ul class="nav navbar-nav">
-              <li><a id="len1" class="hoverable" href="#">Home</a></li>
-              <li><a id="len2" class="hoverable" href="#">Climate</a></li>
-              <li><a id="len3" class="hoverable" href="#">Socio-Economic</a></li>
-              <li><a id="len4" class="hoverable" href="#">Women</a></li>
-              <li><a id="len5" class="hoverable" href="#">XYZ</a></li>
-            </ul>
-          </div>
-        </nav>
+    <nav>
+        <div class="logo">
+            <h1 style="color: #fff; font-size: 18px;">ClimateSentinels</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a class="hoverable" href="#">Home</a></li>
+            <li><a class="hoverable" href="#">Climate</a></li>
+            <li><a class="hoverable" href="#">Socio-Economic</a></li>
+            <li><a class="hoverable" href="#">Women</a></li>
+            <li><a class="hoverable" href="#">XYZ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content section -->
+    <div class="main-content">
+        <!-- Map container -->
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+
+        <!-- Pie chart card -->
+        <div id="chart-card">
+            <canvas id="disasterChart"></canvas>
+        </div>
     </div>
 
-    <!-- Image just below the navbar with a smaller size -->
-    <img src="didyouknow.jpg" alt="Placeholder Image" class="image-below-navbar">
-
-    <!-- Map container below the image -->
-    <div id="map-container">
-        <div id="map"></div>
-    </div>
+    <!-- Footer
+    <div class="footer">
+        &copy; 2024 ClimateSentinels. All rights reserved.
+    </div> -->
 
     <!-- Map Script -->
     <script>
-        // Initialize the map and set bounds and zoom limits
+        // Initialize the map with zoom and boundary constraints
         var map = L.map('map', {
             center: [4.2105, 101.9758],  // Center on Southeast Asia
-            zoom: 1,
+            zoom: 5,
             maxBounds: [[-11.087886, 95.152344], [26.115986, 130.517578]], // Define the bounds
-            minZoom: 1,  // Set minimum zoom
-            maxZoom: 8,  // Set maximum zoom to avoid zooming in too much
+            minZoom: -10,
+            maxZoom: 4,
             worldCopyJump: false
         });
 
@@ -165,51 +195,54 @@
             "Vietnam": { lat: 14.0583, lon: 108.2772, disasters: {"Earthquake": 0, "Flood": 96, "Landslide": 6, "Volcanic Activity": 0, "Storm": 127 }}
         };
 
-        // Function to create pie chart with adjusted canvas size
-        function createPieChart(data, title) {
-            var ctx = document.createElement('canvas');
-            ctx.width = 250;  // Adjusted canvas width
-            ctx.height = 200; // Adjusted canvas height
-            document.body.appendChild(ctx);
+        let disasterChart;  // Global chart variable
 
-            var chart = new Chart(ctx.getContext('2d'), {
-                type: 'pie',
-                data: {
-                    labels: Object.keys(data),
-                    datasets: [{
-                        data: Object.values(data),
-                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
-                        borderColor: 'white',
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true, // Maintain the chart's aspect ratio
-                    title: { display: true, text: title },
-                    legend: { position: 'top', labels: { boxWidth: 10, padding: 5 } }, // Adjust legend settings
-                    layout: {
-                        padding: {
-                            left: 5,
-                            right: 5,
-                            top: 5,
-                            bottom: 5
-                        }
+        // Function to update or create the pie chart
+        function updatePieChart(data, title) {
+            const ctx = document.getElementById('disasterChart').getContext('2d');
+
+            if (disasterChart) {
+                // Update existing chart
+                disasterChart.data.labels = Object.keys(data);
+                disasterChart.data.datasets[0].data = Object.values(data);
+                disasterChart.options.title.text = title;
+                disasterChart.update();
+            } else {
+                // Create a new chart
+                disasterChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: Object.keys(data),
+                        datasets: [{
+                            data: Object.values(data),
+                            backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                            borderColor: '#ffffff',  // White border for better visibility
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        title: { display: true, text: title, fontColor: '#4e60ef', fontSize: 18 },
+                        legend: { position: 'top', labels: { boxWidth: 10, padding: 5, fontColor: '#000' } }, // Fixed font color for labels
+                        layout: { padding: { left: 5, right: 5, top: 5, bottom: 5 } }
                     }
-                }
-            });
-            return ctx;
+                });
+            }
         }
 
-        // Place markers and bind popup with pie charts
+        // Add markers to the map
         Object.keys(countries).forEach(function (key) {
-            var country = countries[key];
-            var marker = L.marker([country.lat, country.lon]).addTo(map);
+            const country = countries[key];
+            const marker = L.marker([country.lat, country.lon]).addTo(map);
+
             marker.on('click', function () {
-                var chart = createPieChart(country.disasters, key);
-                marker.bindPopup(chart, { minWidth: 300, maxWidth: 300 }).openPopup(); // Adjusted popup width
+                updatePieChart(country.disasters, key);  // Update pie chart when a marker is clicked
             });
         });
+
+        // Initially show the pie chart for Indonesia
+        updatePieChart(countries['Indonesia'].disasters, 'Indonesia');
     </script>
 </body>
 </html>
