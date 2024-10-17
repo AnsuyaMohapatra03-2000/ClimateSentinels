@@ -1,0 +1,97 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.5rem;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 400px; /* Set a minimum height */
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    border-radius: 10px;
+    background-color: #333;
+    padding: 5px;
+}
+
+.aspect-section, .causes-section {
+    text-align: left;
+}
+
+.aspect-list, .causes-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: #ffffff; /* Change list items to white */
+}
+
+.aspect-list li, .causes-list li {
+    margin-bottom: 5px;
+}
+
+.checkbox-inline {
+    margin-right: 5px;
+}
+
+/* Flexbox layout for image and aspects side by side */
+.image-aspect-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+/* Align aspects and causes in columns */
+.aspects-causes-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Adjust card size to fit content */
+.col-md-4 {
+    margin-bottom: 30px; /* Increased margin for spacing */
+}
+
+.card-title {
+    color: #FFDD00;
+}
+
+h6 {
+    color: #FFDD00;
+}
+
+input[type="checkbox"] {
+    accent-color: #FFDD00;
+}
