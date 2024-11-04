@@ -104,6 +104,7 @@
         /* Pie chart card */
         #chart-card {
             width: 30%;
+            height: 62%;
             background-color: #fff;
             border-radius: 10px;
             padding: 20px;
@@ -111,12 +112,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden; /* Ensure content stays inside the card */
         }
 
-        /* Chart canvas */
-        #disasterChart {
-            width: 100%;
-            height: auto;
+        .chartjs-render-monitor {
+            display: block !important; 
+            height: 60% !important;
+            width: 120% !important;
         }
 
         /* Footer Styling */
@@ -141,9 +143,9 @@
         </div>
         <ul class="nav-links">
             <li><a class="hoverable" href="#">Home</a></li>
-            <li><a class="hoverable" href="#">Climate</a></li>
-            <li><a class="hoverable" href="#">Socio-Economic</a></li>
-            <li><a class="hoverable" href="#">Women</a></li>
+            <li><a class="hoverable" href="page2.html">Climate</a></li>
+            <li><a class="hoverable" href="page3.html">Socio-Economic</a></li>
+            <!-- <li><a class="hoverable" href="#">Women</a></li> -->
             <li><a class="hoverable" href="#">XYZ</a></li>
         </ul>
     </nav>
@@ -231,7 +233,45 @@
             }
         }
 
+
+// function updatePieChart(data, title) {
+//     const ctx = document.getElementById('disasterChart').getContext('2d');
+
+//     if (disasterChart) {
+//         // Update existing chart
+//         disasterChart.data.labels = Object.keys(data);
+//         disasterChart.data.datasets[0].data = Object.values(data);
+//         disasterChart.options.title.text = title;
+//         disasterChart.update();
+//     } else {
+//         // Create a new chart
+//         disasterChart = new Chart(ctx, {
+//             type: 'pie',
+//             data: {
+//                 labels: Object.keys(data),
+//                 datasets: [{
+//                     data: Object.values(data),
+//                     backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+//                     borderColor: '#ffffff',  // White border for better visibility
+//                     borderWidth: 2
+//                 }]
+//             },
+//             options: {
+//                 responsive: true,
+//                 maintainAspectRatio: true,
+//                 title: { display: true, text: title, fontColor: '#4e60ef', fontSize: 18 },
+//                 legend: {
+//                     position: 'left', // Set position to "left" to place legend on the left side
+//                     labels: { boxWidth: 10, padding: 5, fontColor: '#000' }
+//                 },
+//                 layout: { padding: { left: 5, right: 5, top: 5, bottom: 5 } }
+//             }
+//         });
+//     }
+// }
+
         // Add markers to the map
+        
         Object.keys(countries).forEach(function (key) {
             const country = countries[key];
             const marker = L.marker([country.lat, country.lon]).addTo(map);

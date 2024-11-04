@@ -42,11 +42,47 @@ const countries = {
 };
 
 // Function to create pie chart with adjusted canvas size
+// function createPieChart(data, title) {
+//     var ctx = document.createElement('canvas');
+//     ctx.width = 500;  // Adjusted canvas width
+//     ctx.height = 500; // Adjusted canvas height
+//     document.body.appendChild(ctx);
+
+//     var chart = new Chart(ctx.getContext('2d'), {
+//         type: 'pie',
+//         data: {
+//             labels: Object.keys(data),
+//             datasets: [{
+//                 data: Object.values(data),
+//                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+//                 borderColor: 'white',
+//                 borderWidth: 2
+//             }]
+//         },
+//         options: {
+//             responsive: true,
+//             maintainAspectRatio: true, // Maintain the chart's aspect ratio
+//             title: { display: true, text: title },
+//             legend: { position: 'top', labels: { boxWidth: 10, padding: 5 } }, // Adjust legend settings
+//             layout: {
+//                 padding: {
+//                     left: 5,
+//                     right: 5,
+//                     top: 5,
+//                     bottom: 5
+//                 }
+//             }
+//         }
+//     });
+//     return ctx;
+// }
+
 function createPieChart(data, title) {
+    // Create a canvas with the desired dimensions
     var ctx = document.createElement('canvas');
-    ctx.width = 250;  // Adjusted canvas width
-    ctx.height = 200; // Adjusted canvas height
-    document.body.appendChild(ctx);
+    ctx.width = 1000;  // Adjust canvas width here
+    ctx.height = 1000; // Adjust canvas height here
+    document.body.appendChild(ctx); // Append it to the body (or a specific container if needed)
 
     var chart = new Chart(ctx.getContext('2d'), {
         type: 'pie',
@@ -60,10 +96,10 @@ function createPieChart(data, title) {
             }]
         },
         options: {
-            responsive: true,
-            maintainAspectRatio: true, // Maintain the chart's aspect ratio
+            responsive: false,  // Set to false to use custom dimensions
+            maintainAspectRatio: false, // Set to false to allow non-square dimensions
             title: { display: true, text: title },
-            legend: { position: 'top', labels: { boxWidth: 10, padding: 5 } }, // Adjust legend settings
+            legend: { position: 'top', labels: { boxWidth: 10, padding: 5 } },
             layout: {
                 padding: {
                     left: 5,
@@ -76,6 +112,7 @@ function createPieChart(data, title) {
     });
     return ctx;
 }
+
 
 // Place markers and bind popup with pie charts
 Object.keys(countries).forEach(function (key) {
