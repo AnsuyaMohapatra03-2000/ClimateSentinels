@@ -1,4 +1,3 @@
-// Modal references
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close")[0];
 const buttons = document.querySelectorAll(".openModal");
@@ -18,7 +17,6 @@ const modalData = {
                     <li>Government reforms and aid by 2005-2006 improved food security, reducing hunger levels below 2000 levels.</li>
                 </ul>
             `
-
         },
         poverty: {
             image: "Assets/tsunami_poverty.png",
