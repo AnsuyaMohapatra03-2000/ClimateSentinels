@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClimateSentinels</title>
 
-    <!-- Preconnect and Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <!-- Leaflet and Chart.js Libraries -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
@@ -26,8 +24,8 @@
         body {
             font-family: 'CustomFont', sans-serif;
             font-size: 16px;
-            color: #fff;
-            background-color: #000; /* Black background */
+            color: #333;
+            background-color: #f8f9fd;
             font-weight: 600;
             margin: 0;
             padding: 0;
@@ -42,37 +40,47 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 5px 20px; /* Smaller padding for smaller height */
-            background-color: #4e60ef; /* Blue color for the navbar */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            background-color: #415ff9;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
-            height: 45px; /* Reduced navbar height */
+            height: 5%;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px; /* Reduced gap between links */
+            gap: 20px;
+            height: 100%;
         }
 
         .nav-links li {
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            height: 100%;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #fff;
+            color: #ffffff;
             font-weight: 600;
-            padding: 5px 10px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
             transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            border-radius: 5px;
         }
 
+        /* Enhanced hover effect */
         .nav-links a:hover {
-            background-color: #5C6BC0;
-            color: #fff;
-            border-radius: 5px;
+            background-color: #3742c8;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(55, 66, 200, 0.4);
+            transform: scale(1.05); /* Slightly enlarge on hover */
         }
 
         /* Main Section */
@@ -90,9 +98,9 @@
             flex-grow: 1;
             width: 60%;
             height: 60vh;
-            background-color: #0D0D0D;
+            background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
@@ -105,26 +113,27 @@
         #chart-card {
             width: 30%;
             height: 62%;
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Ensure content stays inside the card */
+            overflow: hidden;
         }
 
+        /* Chart canvas */
         .chartjs-render-monitor {
             display: block !important; 
             height: 60% !important;
-            width: 120% !important;
+            width: 110% !important;
         }
 
         /* Footer Styling */
         .footer {
-            background-color: #4e60ef;
-            padding: 10px; /* Reduced padding */
+            background-color: #415ff9;
+            padding: 10px;
             text-align: center;
             color: #ffffff;
             font-size: 14px;
@@ -139,13 +148,12 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <h1 style="color: #fff; font-size: 18px;">ClimateSentinels</h1>
+            <h1 style="color: #ffffff; font-size: 18px;">ClimateSentinels</h1>
         </div>
         <ul class="nav-links">
             <li><a class="hoverable" href="#">Home</a></li>
             <li><a class="hoverable" href="page2.html">Climate</a></li>
             <li><a class="hoverable" href="page3.html">Socio-Economic</a></li>
-            <!-- <li><a class="hoverable" href="#">Women</a></li> -->
             <li><a class="hoverable" href="#">XYZ</a></li>
         </ul>
     </nav>
@@ -163,18 +171,13 @@
         </div>
     </div>
 
-    <!-- Footer
-    <div class="footer">
-        &copy; 2024 ClimateSentinels. All rights reserved.
-    </div> -->
-
     <!-- Map Script -->
     <script>
         // Initialize the map with zoom and boundary constraints
         var map = L.map('map', {
-            center: [4.2105, 101.9758],  // Center on Southeast Asia
+            center: [4.2105, 101.9758],
             zoom: 5,
-            maxBounds: [[-11.087886, 95.152344], [26.115986, 130.517578]], // Define the bounds
+            maxBounds: [[-11.087886, 95.152344], [26.115986, 130.517578]],
             minZoom: -10,
             maxZoom: 4,
             worldCopyJump: false
@@ -182,7 +185,7 @@
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
         const countries = {
@@ -204,13 +207,11 @@
             const ctx = document.getElementById('disasterChart').getContext('2d');
 
             if (disasterChart) {
-                // Update existing chart
                 disasterChart.data.labels = Object.keys(data);
                 disasterChart.data.datasets[0].data = Object.values(data);
-                disasterChart.options.title.text = title;
+                disasterChart.options.title.text = title.charAt(0).toUpperCase() + title.slice(1); // Capitalize the first letter
                 disasterChart.update();
             } else {
-                // Create a new chart
                 disasterChart = new Chart(ctx, {
                     type: 'pie',
                     data: {
@@ -218,66 +219,28 @@
                         datasets: [{
                             data: Object.values(data),
                             backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
-                            borderColor: '#ffffff',  // White border for better visibility
+                            borderColor: '#ffffff',
                             borderWidth: 2
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: true,
-                        title: { display: true, text: title, fontColor: '#4e60ef', fontSize: 18 },
-                        legend: { position: 'top', labels: { boxWidth: 10, padding: 5, fontColor: '#000' } }, // Fixed font color for labels
-                        layout: { padding: { left: 5, right: 5, top: 5, bottom: 5 } }
+                        title: { display: true, text: title.charAt(0).toUpperCase() + title.slice(1), fontColor: '#333', fontSize: 18 },
+                        legend: { position: 'top', labels: { boxWidth: 10, padding: 5, fontColor: '#333' } },
+                        layout: { padding: { left: 0, right: 0, top: 0, bottom: 0 } }
                     }
                 });
             }
         }
 
-
-// function updatePieChart(data, title) {
-//     const ctx = document.getElementById('disasterChart').getContext('2d');
-
-//     if (disasterChart) {
-//         // Update existing chart
-//         disasterChart.data.labels = Object.keys(data);
-//         disasterChart.data.datasets[0].data = Object.values(data);
-//         disasterChart.options.title.text = title;
-//         disasterChart.update();
-//     } else {
-//         // Create a new chart
-//         disasterChart = new Chart(ctx, {
-//             type: 'pie',
-//             data: {
-//                 labels: Object.keys(data),
-//                 datasets: [{
-//                     data: Object.values(data),
-//                     backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
-//                     borderColor: '#ffffff',  // White border for better visibility
-//                     borderWidth: 2
-//                 }]
-//             },
-//             options: {
-//                 responsive: true,
-//                 maintainAspectRatio: true,
-//                 title: { display: true, text: title, fontColor: '#4e60ef', fontSize: 18 },
-//                 legend: {
-//                     position: 'left', // Set position to "left" to place legend on the left side
-//                     labels: { boxWidth: 10, padding: 5, fontColor: '#000' }
-//                 },
-//                 layout: { padding: { left: 5, right: 5, top: 5, bottom: 5 } }
-//             }
-//         });
-//     }
-// }
-
         // Add markers to the map
-        
         Object.keys(countries).forEach(function (key) {
             const country = countries[key];
             const marker = L.marker([country.lat, country.lon]).addTo(map);
 
             marker.on('click', function () {
-                updatePieChart(country.disasters, key);  // Update pie chart when a marker is clicked
+                updatePieChart(country.disasters, key);
             });
         });
 

@@ -1,0 +1,540 @@
+// ****************************INDEX.HTML***********************
+
+// Style.css
+
+
+        Background styling
+        body {
+            background: linear-gradient(120deg, #f0f4f7, #dfe7eb);
+            font-family: Arial, sans-serif;
+            padding-bottom: 20px;
+        }
+
+        /* Styling the carousel */
+        #pic-slides {
+            width: 80%;
+            height: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Ensure the images fill the carousel height */
+        .carousel-item img {
+            height: 100%; 
+            width: 100%;
+            object-fit: cover; 
+            border-radius: 10px;
+        }
+
+        /* Carousel caption styling */
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .carousel-caption h2 {
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Customizing the carousel indicators */
+        .carousel-indicators button {
+            background-color: #fff;
+            border: none;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators .active {
+            background-color: #007bff;
+        }
+
+        /* Customizing carousel navigation buttons */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            filter: invert(100%);
+        }
+
+        /* Map container styling */
+        /* #map-container {
+            margin-top: 5%; 
+            width: 80%; 
+            height: 700px; 
+            margin-left: auto;
+            margin-right: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 10px;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        } */
+
+        /* Map container */
+#map-container {
+    flex-grow: 1;
+    width: 60%;
+    height: 70vh; /* Adjusted height for balance */
+    background-color: #0D0D0D;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+/* Pie chart card */
+#chart-card {
+    width: 35%; /* Increased width for alignment */
+    height: 70vh; /* Match height to map */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chart canvas */
+#disasterChart {
+    width: 90%; /* Increase width to fill the card */
+    height: 90%; /* Increase height */
+}
+
+        /* Pie chart popup adjustments */
+        .leaflet-fade-anim .leaflet-map-pane .leaflet-popup {
+            height: 20vh; width: 30vh;
+        }
+        .leaflet-popup , .leaflet-zoom-animated {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+          /* Popup adjustments */
+         .leaflet-popup-content-wrapper {
+            width: 300px !important; /* Increase the popup width */
+            height: auto !important; /* Allow the popup to adjust height automatically */
+            overflow: hidden; /* Hide overflow to ensure the chart doesn't exceed the popup */
+        }
+        .leaflet-popup-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px !important;
+        }
+
+       
+// inbuilt style 
+
+style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'CustomFont', sans-serif;
+            font-size: 16px;
+            color: #fff;
+            background-color: #000; /* Black background */
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar Styling */
+        nav {
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px; /* Smaller padding for smaller height */
+            background-color: #4e60ef; /* Blue color for the navbar */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 45px; /* Reduced navbar height */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px; /* Reduced gap between links */
+        }
+
+        .nav-links li {
+            display: inline-block;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #5C6BC0;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Main Section */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        /* Map container */
+        #map-container {
+            flex-grow: 1;
+            width: 60%;
+            height: 60vh;
+            background-color: #0D0D0D;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Pie chart card */
+        #chart-card {
+            width: 30%;
+            height: 62%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensure content stays inside the card */
+        }
+
+        .chartjs-render-monitor {
+            display: block !important; 
+            height: 60% !important;
+            width: 120% !important;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #4e60ef;
+            padding: 10px; /* Reduced padding */
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+        }
+    </style>
+
+// index.HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimateSentinels</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'CustomFont', sans-serif;
+            font-size: 16px;
+            color: #fff;
+            background-color: #000; /* Black background */
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar Styling */
+        nav {
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px; /* Smaller padding for smaller height */
+            background-color: #4e60ef; /* Blue color for the navbar */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 45px; /* Reduced navbar height */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px; /* Reduced gap between links */
+        }
+
+        .nav-links li {
+            display: inline-block;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #5C6BC0;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Main Section */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        /* Map container */
+        #map-container {
+            flex-grow: 1;
+            width: 60%;
+            height: 60vh;
+            background-color: #0D0D0D;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Pie chart card */
+        #chart-card {
+            width: 30%;
+            height: 62%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensure content stays inside the card */
+        }
+
+        .chartjs-render-monitor {
+            display: block !important; 
+            height: 60% !important;
+            width: 120% !important;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #4e60ef;
+            padding: 10px; /* Reduced padding */
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- Bootstrap and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h1 style="color: #fff; font-size: 18px;">ClimateSentinels</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a class="hoverable" href="#">Home</a></li>
+            <li><a class="hoverable" href="page2.html">Climate</a></li>
+            <li><a class="hoverable" href="page3.html">Socio-Economic</a></li>
+            <!-- <li><a class="hoverable" href="#">Women</a></li> -->
+            <li><a class="hoverable" href="#">XYZ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content section -->
+    <div class="main-content">
+        <!-- Map container -->
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+
+        <!-- Pie chart card -->
+        <div id="chart-card">
+            <canvas id="disasterChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Footer
+    <div class="footer">
+        &copy; 2024 ClimateSentinels. All rights reserved.
+    </div> -->
+
+    <!-- Map Script -->
+    <script>
+        // Initialize the map with zoom and boundary constraints
+        var map = L.map('map', {
+            center: [4.2105, 101.9758],  // Center on Southeast Asia
+            zoom: 5,
+            maxBounds: [[-11.087886, 95.152344], [26.115986, 130.517578]], // Define the bounds
+            minZoom: -10,
+            maxZoom: 4,
+            worldCopyJump: false
+        });
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const countries = {
+            "Indonesia": { lat: -0.7893, lon: 113.9213, disasters: {"Earthquake": 136, "Flood": 247, "Landslide": 64, "Volcanic Activity": 61, "Storm": 14 }},
+            "Philippines": { lat: 12.8797, lon: 121.7740, disasters: {"Earthquake": 40, "Flood": 156, "Landslide": 31, "Volcanic Activity": 29, "Storm": 377 }},
+            "Cambodia": { lat: 12.5657, lon: 104.9910, disasters: {"Earthquake": 0, "Flood": 21, "Landslide": 0, "Volcanic Activity": 0, "Storm": 6 }},
+            "Laos": { lat: 19.8563, lon: 102.4955, disasters: {"Earthquake": 0, "Flood": 28, "Landslide": 0, "Volcanic Activity": 0, "Storm": 11 }},
+            "Myanmar": { lat: 21.9162, lon: 95.9560, disasters: {"Earthquake": 10, "Flood": 36, "Landslide": 10, "Volcanic Activity": 0, "Storm": 21 }},
+            "Malaysia": { lat: 4.2105, lon: 101.9758, disasters: {"Earthquake": 2, "Flood": 65, "Landslide": 4, "Volcanic Activity": 0, "Storm": 8 }},
+            "Thailand": { lat: 15.8700, lon: 100.9925, disasters: {"Earthquake": 4, "Flood": 87, "Landslide": 3, "Volcanic Activity": 0, "Storm": 42 }},
+            "Timor-Leste": { lat: -8.8742, lon: 125.7275, disasters: {"Earthquake": 1, "Flood": 6, "Landslide": 0, "Volcanic Activity": 0, "Storm": 2 }},
+            "Vietnam": { lat: 14.0583, lon: 108.2772, disasters: {"Earthquake": 0, "Flood": 96, "Landslide": 6, "Volcanic Activity": 0, "Storm": 127 }}
+        };
+
+        let disasterChart;  // Global chart variable
+
+        // Function to update or create the pie chart
+        function updatePieChart(data, title) {
+            const ctx = document.getElementById('disasterChart').getContext('2d');
+
+            if (disasterChart) {
+                // Update existing chart
+                disasterChart.data.labels = Object.keys(data);
+                disasterChart.data.datasets[0].data = Object.values(data);
+                disasterChart.options.title.text = title;
+                disasterChart.update();
+            } else {
+                // Create a new chart
+                disasterChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: Object.keys(data),
+                        datasets: [{
+                            data: Object.values(data),
+                            backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                            borderColor: '#ffffff',  // White border for better visibility
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        title: { display: true, text: title, fontColor: '#4e60ef', fontSize: 18 },
+                        legend: { position: 'top', labels: { boxWidth: 10, padding: 5, fontColor: '#000' } }, // Fixed font color for labels
+                        layout: { padding: { left: 5, right: 5, top: 5, bottom: 5 } }
+                    }
+                });
+            }
+        }
+
+
+// function updatePieChart(data, title) {
+//     const ctx = document.getElementById('disasterChart').getContext('2d');
+
+//     if (disasterChart) {
+//         // Update existing chart
+//         disasterChart.data.labels = Object.keys(data);
+//         disasterChart.data.datasets[0].data = Object.values(data);
+//         disasterChart.options.title.text = title;
+//         disasterChart.update();
+//     } else {
+//         // Create a new chart
+//         disasterChart = new Chart(ctx, {
+//             type: 'pie',
+//             data: {
+//                 labels: Object.keys(data),
+//                 datasets: [{
+//                     data: Object.values(data),
+//                     backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+//                     borderColor: '#ffffff',  // White border for better visibility
+//                     borderWidth: 2
+//                 }]
+//             },
+//             options: {
+//                 responsive: true,
+//                 maintainAspectRatio: true,
+//                 title: { display: true, text: title, fontColor: '#4e60ef', fontSize: 18 },
+//                 legend: {
+//                     position: 'left', // Set position to "left" to place legend on the left side
+//                     labels: { boxWidth: 10, padding: 5, fontColor: '#000' }
+//                 },
+//                 layout: { padding: { left: 5, right: 5, top: 5, bottom: 5 } }
+//             }
+//         });
+//     }
+// }
+
+        // Add markers to the map
+        
+        Object.keys(countries).forEach(function (key) {
+            const country = countries[key];
+            const marker = L.marker([country.lat, country.lon]).addTo(map);
+
+            marker.on('click', function () {
+                updatePieChart(country.disasters, key);  // Update pie chart when a marker is clicked
+            });
+        });
+
+        // Initially show the pie chart for Indonesia
+        updatePieChart(countries['Indonesia'].disasters, 'Indonesia');
+    </script>
+</body>
+</html>
