@@ -1,13 +1,10 @@
-@font-face {
-    font-family: 'CustomFont';
-    src: url('fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: bold;
+ body {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
-}
-
-body {
-    font-family: 'CustomFont', sans-serif;
-    font-size: 16px;
+    
+    /* font-size: 16px; */
     color: #333;
     background-color: #f8f9fd;
     font-weight: 600;
@@ -16,7 +13,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-}
+} 
 
 /* Navbar Styling */
 nav {
@@ -24,26 +21,32 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #415ff9;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    padding-top: 10px; /* updated padding to match climate.css */
+    padding-left: 20px;
+    background: linear-gradient(90deg, #415ff9 0%, #6a7dfe 100%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 5%;
+    height: 60px;
+
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-    height: 100%;
+    height: 80%;
 }
 
 .nav-links li {
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 80%;
 }
 
 .nav-links a {
@@ -66,6 +69,7 @@ nav {
     box-shadow: 0 4px 8px rgba(55, 66, 200, 0.4);
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
+
 
 /* Main Section */
 .main-content {
