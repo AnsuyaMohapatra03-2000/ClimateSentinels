@@ -8,7 +8,7 @@ const modalText = document.getElementById("modalText");
 const modalData = {
     "Indian Ocean Tsunami (2004)": {
         hunger: {
-            image: "Assets/tsunami_hunger.png",
+            image: "Assets/socio_page/tsunami_hunger.png",
            text: `
                 <ul>
                     <li>Severely impacted countries: Myanmar, Malaysia, Indonesia, and Thailand.</li>
@@ -19,7 +19,7 @@ const modalData = {
             `
         },
         poverty: {
-            image: "Assets/tsunami_poverty.png",
+            image: "Assets/socio_page/tsunami_poverty.png",
             text: `
                 <ul>
                     <li>Countries heavily impacted: Myanmar, Malaysia, Indonesia, and Thailand.</li>
@@ -30,7 +30,7 @@ const modalData = {
             `
         },
         literacy: {
-            image: "Assets/tsunami_literacy.png",
+            image: "Assets/socio_page/tsunami_literacy.png",
             text: `
                 <ul>
                     <li>Literacy rates in Myanmar, Malaysia, Indonesia, and Thailand remained largely stable post-tsunami.</li>
@@ -41,7 +41,7 @@ const modalData = {
             `
         },
         employment: {
-            image: "Assets/tsunami_unemployment.png",
+            image: "Assets/socio_page/tsunami_unemployment.png",
             text: `
                 <ul>
                     <li>Unemployment rates in Myanmar, Malaysia, Indonesia, and Thailand remained relatively stable during 2004-2005.</li>
@@ -54,7 +54,7 @@ const modalData = {
     },
     "Southeast Asian Haze Crisis (1997-1998)": {
         hunger: {
-            image: "Assets/haze_hunger.png",
+            image: "Assets/socio_page/haze_hunger.png",
             text: `
                 <ul>
                     <li>Food security was significantly affected across Southeast Asia, though Global Hunger Index (GHI) data was not available until after 2000.</li>
@@ -65,7 +65,7 @@ const modalData = {
             `
         },
         poverty: {
-            image: "Assets/haze_poverty.png",
+            image: "Assets/socio_page/haze_poverty.png",
             text: `
                 <ul>
                     <li>The haze crisis from forest fires in Indonesia severely impacted Brunei, Indonesia, Malaysia, the Philippines, Singapore, and Thailand.</li>
@@ -77,7 +77,7 @@ const modalData = {
             `
         },
         literacy: {
-            image: "Assets/haze_literacy.png",
+            image: "Assets/socio_page/haze_literacy.png",
             text: `
                 <ul>
                     <li>Despite the crisis, literacy rates continued to improve steadily across Brunei, Singapore, the Philippines, Indonesia, Malaysia, and Thailand.</li>
@@ -87,7 +87,7 @@ const modalData = {
             `
         },
         employment: {
-            image: "Assets/haze_unemployment.png",
+            image: "Assets/socio_page/haze_unemployment.png",
             text: `
                 <ul>
                     <li>Unemployment trends varied during 1997-98, influenced by both the haze crisis and the Asian Financial Crisis.</li>
@@ -100,7 +100,7 @@ const modalData = {
     },
     "Typhoon Ketsana (2009)": {
         hunger: {
-            image: "Assets/typhoon_hunger.png",
+            image: "Assets/socio_page/typhoon_hunger.png",
             text: `
                 <ul>
                     <li>GHI data shows slowed hunger reduction progress in 2009-10 due to Typhoon Ketsana.</li>
@@ -111,7 +111,7 @@ const modalData = {
             `
         },
         poverty: {
-            image: "Assets/typhoon_poverty.png",
+            image: "Assets/socio_page/typhoon_poverty.png",
             text: `
                <ul>
                     <li>Majorly affected countries: Philippines, Vietnam, Laos, Cambodia.</li>
@@ -122,7 +122,7 @@ const modalData = {
             `
         },
         literacy: {
-            image: "Assets/typhoon_literacy.png",
+            image: "Assets/socio_page/typhoon_literacy.png",
             text:`
                 <ul>
                     <li>The Philippines and Vietnam maintained high literacy rates, approaching 100% by the 2000s.</li>
@@ -133,7 +133,7 @@ const modalData = {
             `
         },
         employment: {
-            image: "Assets/typhoon_unemployment.png",
+            image: "Assets/socio_page/typhoon_unemployment.png",
             text: `
                 <ul>
                     <li>The Philippines experienced a slight rise in unemployment around 2009-10 due to economic impacts from Ketsana.</li>
