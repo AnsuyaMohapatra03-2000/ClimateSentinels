@@ -167,3 +167,23 @@ h6 {
     color: #415ff9;
     margin-bottom: 5px;
 }
+
+.heading {
+    /* font-family: 'Playfair Display', serif; */
+    text-align: center;
+    font-size: 40px; /* Make the title large */
+    color: #415ff9; /* Add an attractive color */
+    font-weight: 900; /* Make it bold */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 2px; /* Adds spacing between letters */
+}
+
+.heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ffce56; /* Accent color for underline effect */
+    margin: 10px auto 0; /* Center the line below the title */
+}

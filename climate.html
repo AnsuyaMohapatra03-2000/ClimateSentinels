@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <h1 style="color: #ffffff; font-size: 18px;">Climate Factors</h1>
+            <h1 style="color: #ffffff; font-size: 18px; font-weight: bold;">Climate Sentinels</h1>
         </div>
         <ul class="nav-links">
             <li><a class="hoverable" href="index.html">Home</a></li>
@@ -30,58 +30,72 @@
             <li><a class="hoverable" href="#">Future Projection</a></li>
         </ul>
     </nav>
-
-    <!-- Main Title -->
-    <!-- <h1>Climate Factors</h1> -->
-     <br> <br> 
-
+    <br> 
+  
+     <h1 class="heading">Climate Change</h1>
      <!-- Card Layout Section -->
      <div class="container">
         <div class="row justify-content-center">
 
             <!-- Myanmar Card -->
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Myanmar</h5>
-                        
-                        <!-- Image and Aspects Section Side by Side -->
-                        <div class="image-aspect-wrapper">
-                            <!-- Image Section -->
-                            <div class="image-section">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flag_of_Myanmar.svg/1920px-Flag_of_Myanmar.svg.png" alt="Myanmar Image">
-                            </div>
+<div class="col-md-4">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Myanmar</h5>
+            
+            <!-- Image and Aspects Section Side by Side -->
+            <div class="image-aspect-wrapper">
+                <!-- Image Section -->
+                <div class="image-section">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flag_of_Myanmar.svg/1920px-Flag_of_Myanmar.svg.png" alt="Myanmar Image">
+                </div>
 
-                            <!-- Aspects and Causes Section -->
-                            <div class="aspects-causes-wrapper">
-                                <!-- Aspects Section -->
-                                <div class="aspect-section">
-                                    <h6>Aspects</h6>
-                                    <ul class="aspect-list">
-                                        <li><input type="checkbox" class="checkbox-inline"> Cyclonic Storms</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Tsunamis</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Floods</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Forest Fires</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Social Vulnerability</li>
-                                    </ul>
-                                </div>
+                <!-- Aspects and Causes Section -->
+                <div class="aspects-causes-wrapper">
+                    <!-- Aspects Section -->
+                    <div class="aspect-section">
+                        <h6>Aspects</h6>
+                        <ul class="aspect-list">
+                            <li><input type="checkbox" class="myanmar-checkbox" data-image="<img src='https://example.com/image1.jpg' class='img-fluid'>" data-info="Information about Surface Temperature"> Surface Temperature</li>
+                            <li><input type="checkbox" class="myanmar-checkbox" data-image="<img src='https://example.com/image2.jpg' class='img-fluid'>" data-info="Information about Precipitation"> Precipitation</li>
+                            <li><input type="checkbox" class="myanmar-checkbox" data-image="<img src='https://example.com/image3.jpg' class='img-fluid'>" data-info="Information about Earthquakes"> Earthquake</li>
+                            <li><input type="checkbox" class="myanmar-checkbox" data-image="<img src='https://example.com/image4.jpg' class='img-fluid'>" data-info="Information about Floods"> Floods</li>
+                        </ul>
+                    </div>
 
-                                <!-- Causes Section -->
-                                <div class="causes-section">
-                                    <h6>Causes</h6>
-                                    <ul class="causes-list">
-                                        <li><input type="checkbox" class="checkbox-inline"> Sea Levels</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Deforestation</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Climate Change</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Urbanization</li>
-                                        <li><input type="checkbox" class="checkbox-inline"> Poor Infrastructure</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Causes Section -->
+                    <div class="causes-section">
+                        <h6>Causes</h6>
+                        <ul class="causes-list">
+                            <li><input type="checkbox" class="myanmar-checkbox" data-image="<iframe width='630' height='460' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/emissionsDeforestation/country/MMR'></iframe>" data-info="GHG Emissions in Myanmar"> GHG Emissions</li>
+                            <li><input type="checkbox" class="myanmar-checkbox" data-image="<iframe width='630' height='460' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/treeLoss/country/MMR'></iframe>" data-info="Deforestation in Myanmar"> Deforestation</li>
+                            <li><input type="checkbox" class="myanmar-checkbox" data-image="<iframe width='630' height='460' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/treeLossFiresAnnual/country/MMR'></iframe>" data-info="Forest Fires in Myanmar"> Forest Fires</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Myanmar Modal -->
+<div class="modal fade" id="myanmarModal" tabindex="-1" aria-labelledby="myanmarModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myanmarModalLabel">Myanmar Climate Factor Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="modalContent"></div>
+        <p id="modalInfo" class="mt-3"></p>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
 
             <!-- Indonesia Card -->
             <div class="col-md-4">
@@ -243,5 +257,34 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript to handle checkbox selection and modal display -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select all checkboxes in the Myanmar card with the class 'myanmar-checkbox'
+        const myanmarCheckboxes = document.querySelectorAll('.myanmar-checkbox');
+
+        myanmarCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    // Get the data attributes for image/iframe content and info
+                    const contentHtml = this.getAttribute('data-image');
+                    const infoText = this.getAttribute('data-info');
+
+                    // Update the modal with the specific content and information
+                    document.getElementById('modalContent').innerHTML = contentHtml;
+                    document.getElementById('modalInfo').textContent = infoText;
+
+                    // Show the modal
+                    const myanmarModal = new bootstrap.Modal(document.getElementById('myanmarModal'));
+                    myanmarModal.show();
+
+                    // Uncheck the checkbox after displaying the modal
+                    this.checked = false;
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
