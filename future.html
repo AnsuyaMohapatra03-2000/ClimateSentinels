@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Sentinels - Future Projection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/future.css">
+</head>
+<style>
+    img {
+        height: 50%;
+        width: 50%;
+        object-fit: cover;
+    }
+</style>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h1 style="color: #ffffff; font-size: 18px;">Climate Sentinels</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a class="hoverable" href="index.html">Home</a></li>
+            <li><a class="hoverable" href="climate.html">Climate</a></li>
+            <li><a class="hoverable" href="socio.html">Socio-Economic</a></li>
+            <li><a class="hoverable" href="future.html">Future Projection</a></li>
+        </ul>
+    </nav>
+
+    <!-- Title Section -->
+    <br>
+    <h1 class="heading">Future Projection</h1>
+    <br>
+
+    <!-- Accordion with Tabs -->
+    <div class="container">
+        <div class="accordion" id="topicAccordion" style="width: 100%;">
+            
+            <!-- Average Mean Surface Temperature -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Average Mean Surface Temperature
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#topicAccordion">
+                    <div class="accordion-body">
+                        <p>Projections on the average mean surface temperature across various regions.</p>
+                        <ul class="nav nav-tabs" id="temperatureTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="indonesia-tab" data-bs-toggle="tab" data-bs-target="#indonesia" type="button">Indonesia</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="philippines-tab" data-bs-toggle="tab" data-bs-target="#philippines" type="button">Philippines</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="thailand-tab" data-bs-toggle="tab" data-bs-target="#thailand" type="button">Thailand</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="vietnam-tab" data-bs-toggle="tab" data-bs-target="#vietnam" type="button">Vietnam</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="myanmar-tab" data-bs-toggle="tab" data-bs-target="#myanmar" type="button">Myanmar</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="temperatureTabContent">
+                            <div class="tab-pane fade show active" id="indonesia" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Indonesia_map.jpg">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Indonesia_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="philippines" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Phillipines_map.jpg">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Phillipines_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="thailand" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Thailand_map.jpg">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Thailand_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="vietnam" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Vietnam_map.jpg">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Vietnam_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="myanmar" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Myanmar_map.jpg">
+                                    <img src="Assets/future_page/AverageMeanSurfaceTemperature/Myanmar_heatmap.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number of Hot Days Anomaly -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Number of Hot Days (Max 30°C) Anomaly
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#topicAccordion">
+                    <div class="accordion-body">
+                        <p>Analysis of the projected number of hot days (over 30°C) anomaly across regions.</p>
+                        <ul class="nav nav-tabs" id="hotDaysTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="indonesia-hot-tab" data-bs-toggle="tab" data-bs-target="#indonesia-hot" type="button">Indonesia</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="philippines-hot-tab" data-bs-toggle="tab" data-bs-target="#philippines-hot" type="button">Philippines</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="thailand-hot-tab" data-bs-toggle="tab" data-bs-target="#thailand-hot" type="button">Thailand</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="vietnam-hot-tab" data-bs-toggle="tab" data-bs-target="#vietnam-hot" type="button">Vietnam</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="myanmar-hot-tab" data-bs-toggle="tab" data-bs-target="#myanmar-hot" type="button">Myanmar</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="hotDaysTabContent">
+                            <div class="tab-pane fade show active" id="indonesia-hot" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Indonesia_map.jpg">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Indonesia_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="philippines-hot" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Phillipines_map.jpg">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Phillipines_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="thailand-hot" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Thailand_map.jpg">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Thailand_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="vietnam-hot" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Vietnam_map.jpg">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Vietnam_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="myanmar-hot" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Myanmar_map.jpg">
+                                    <img src="Assets/future_page/NumberofHotDaysTmax30°CAnomaly/Myanmar_heatmap.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number of Tropical Nights Anomaly -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        Number of Tropical Nights (T-min 29°C) Anomaly
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#topicAccordion">
+                    <div class="accordion-body">
+                        <p>Projected increase in tropical nights where minimum temperatures exceed 29°C.</p>
+                        <ul class="nav nav-tabs" id="tropicalNightsTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="indonesia-trop-tab" data-bs-toggle="tab" data-bs-target="#indonesia-trop" type="button">Indonesia</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="philippines-trop-tab" data-bs-toggle="tab" data-bs-target="#philippines-trop" type="button">Philippines</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="thailand-trop-tab" data-bs-toggle="tab" data-bs-target="#thailand-trop" type="button">Thailand</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="vietnam-trop-tab" data-bs-toggle="tab" data-bs-target="#vietnam-trop" type="button">Vietnam</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="myanmar-trop-tab" data-bs-toggle="tab" data-bs-target="#myanmar-trop" type="button">Myanmar</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="tropicalNightsTabContent">
+                            <div class="tab-pane fade show active" id="indonesia-trop" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Indonesia_map.jpg">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Indonesia_hotmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="philippines-trop" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Phillipines_map.jpg">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Phillipines_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="thailand-trop" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Thailand_map.jpg">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Thailand_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="vietnam-trop" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Vietnam_map.jpg">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Vietnam_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="myanmar-trop" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Myanmar_map.jpg">
+                                    <img src="Assets/future_page/NumberofTropicalNights(T-min29°C)Anomaly/Myanmar_heatmap.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Precipitation -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        Precipitation
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#topicAccordion">
+                    <div class="accordion-body">
+                        <p>Projected changes in precipitation levels across different countries.</p>
+                        <ul class="nav nav-tabs" id="precipitationTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="indonesia-precip-tab" data-bs-toggle="tab" data-bs-target="#indonesia-precip" type="button">Indonesia</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="philippines-precip-tab" data-bs-toggle="tab" data-bs-target="#philippines-precip" type="button">Philippines</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="thailand-precip-tab" data-bs-toggle="tab" data-bs-target="#thailand-precip" type="button">Thailand</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="vietnam-precip-tab" data-bs-toggle="tab" data-bs-target="#vietnam-precip" type="button">Vietnam</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="myanmar-precip-tab" data-bs-toggle="tab" data-bs-target="#myanmar-precip" type="button">Myanmar</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="precipitationTabContent">
+                            <div class="tab-pane fade show active" id="indonesia-precip" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/Precipitation/Indonesia_map.jpg">
+                                    <img src="Assets/future_page/Precipitation/Indonesia_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="philippines-precip" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/Precipitation/Phillipines_map.jpg">
+                                    <img src="Assets/future_page/Precipitation/Phillipines_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="thailand-precip" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/Precipitation/Thailand_map.jpg">
+                                    <img src="Assets/future_page/Precipitation/Thailand_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="vietnam-precip" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/Precipitation/Vietnam_map.jpg">
+                                    <img src="Assets/future_page/Precipitation/Vietnam_heatmap.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="myanmar-precip" role="tabpanel">
+                                <div class="d-flex gap-2">
+                                    <img src="Assets/future_page/Precipitation/Myanmar_map.jpg">
+                                    <img src="Assets/future_page/Precipitation/Myanmar_heatmap.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
