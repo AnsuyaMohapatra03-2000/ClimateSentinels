@@ -21,7 +21,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px; /* updated padding to match climate.css */
+    /* padding-top: 5px; */
+    /* padding-top: 10px; updated padding to match climate.css */
     padding-left: 20px;
     background: linear-gradient(90deg, #415ff9 0%, #6a7dfe 100%);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
@@ -40,7 +41,7 @@ nav {
     list-style: none;
     display: flex;
     gap: 20px;
-    height: 80%;
+    /* height: 80%; */
 }
 
 .nav-links li {
@@ -66,7 +67,7 @@ nav {
 .nav-links a:hover {
     background-color: #3742c8;
     color: #ffffff;
-    box-shadow: 0 4px 8px rgba(55, 66, 200, 0.4);
+    box-shadow: 0 6px 8px rgba(55, 66, 200, 0.4);
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
@@ -100,7 +101,7 @@ nav {
 /* Pie chart card */
 #chart-card {
     width: 30%;
-    height: 62%;
+    height: 92%;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
@@ -125,4 +126,32 @@ nav {
     text-align: center;
     color: #ffffff;
     font-size: 14px;
+}
+
+/* Topic and Image Section */
+.topic-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f4fc; /* Light background for contrast */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.topic-image-section h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    max-width: 80%;
+}
+
+.topic-image-section img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
