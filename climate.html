@@ -14,7 +14,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <!-- FONT STYLE LINK END  -->
+    <style>
+        /* Set the modal to take up a larger percentage of the viewport height */
+        .modal-dialog {
+            max-width: 70vw; /* Set max-width to 90% of viewport width */
+        }
+    
+        .modal-content {
+            max-height: 90vh; /* Set max-height to 90% of viewport height */
+        }
+    
+        .modal-body {
+            overflow-y: auto; /* Enables scrolling if content exceeds the modal's height */
+        }
+    
+        /* Remove aspect ratio padding */
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Set the iframe wrapper to occupy 80% of the viewport height */
+    overflow: hidden;
+}
 
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make iframe occupy full height of the wrapper */
+    border: none;
+}
+
+    </style>
+    
 </head>
 <body>
 
@@ -66,9 +98,9 @@
                             <div class="causes-section">
                                 <h6>Causes</h6>
                                 <ul class="causes-list">
-                                    <li><input type="checkbox" class="myanmar-checkbox" data-image="<div class='iframe-wrapper'><iframe width='630' height='100%' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/emissionsDeforestation/country/MMR'></iframe></div>" data-info="GHG Emissions in Myanmar">  GHG Emissions</li>
-                                    <li><input type="checkbox" class="myanmar-checkbox" data-image="<div class='iframe-wrapper'><iframe width='630' height='100%' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/treeLoss/country/MMR'></iframe></div>" data-info="Deforestation in Myanmar">  Deforestation</li>
-                                    <li><input type="checkbox" class="myanmar-checkbox" data-image="<div class='iframe-wrapper'><iframe width='630' height='100%' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/treeLossFiresAnnual/country/MMR'></iframe></div>" data-info="Forest Fires in Myanmar">  Forest Fires</li>
+                                    <li><input type="checkbox" class="myanmar-checkbox" data-image="<div class='iframe-wrapper'><iframe width='630' height='700' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/emissionsDeforestation/country/MMR'></iframe></div>" data-info="GHG Emissions in Myanmar">  GHG Emissions</li>
+                                    <li><input type="checkbox" class="myanmar-checkbox" data-image="<div class='iframe-wrapper'><iframe width='630' height='700' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/treeLoss/country/MMR'></iframe></div>" data-info="Deforestation in Myanmar">  Deforestation</li>
+                                    <li><input type="checkbox" class="myanmar-checkbox" data-image="<div class='iframe-wrapper'><iframe width='630' height='700' frameborder='0' src='https://www.globalforestwatch.org/embed/widget/treeLossFiresAnnual/country/MMR'></iframe></div>" data-info="Forest Fires in Myanmar">  Forest Fires</li>
                                 </ul>
                             </div>
                         </div>
@@ -247,21 +279,22 @@
 
 
 
-        <!-- MODAL STARTS HERE-->
-           <div class="modal fade" id="myanmarModal" tabindex="-1" aria-labelledby="myanmarModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="height: 200%;">
-                <div class="modal-header justify-content-center">
-                    <h5 class="modal-title text-center" id="modalInfo"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>                
-                <div class="modal-body d-flex justify-content-center align-items-center" style="text-align: center;">
-                <div id="modalContent" class="d-flex justify-content-center align-items-center"></div> 
-                </div> 
-            </div>
-            </div>
+       <!-- MODAL STARTS HERE -->
+<div class="modal fade" id="myanmarModal" tabindex="-1" aria-labelledby="myanmarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title text-center" id="modalInfo"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>                
+            <div class="modal-body d-flex justify-content-center align-items-center">
+                <div id="modalContent" class="iframe-wrapper"></div> 
+            </div> 
         </div>
-        <!-- MODAL ENDS HERE -->
+    </div>
+</div>
+<!-- MODAL ENDS HERE -->
+
   
 
         </div>

@@ -199,9 +199,9 @@ h6 {
 
 /* Style for aspect images */
 .aspect-image {
-    width: 100%; /* Adjust width as needed, e.g., 100%, 80px, etc. */
+    width: 40%; /* Adjust width as needed, e.g., 100%, 80px, etc. */
     max-width: 80%; /*Set a maximum width */
-    height: 70% !important; /* Maintain aspect ratio */
+    height: 8% !important; /* Maintain aspect ratio */
     align-items: center;
     border-radius: 10px; /* Optional: round the corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for styling */
@@ -225,3 +225,4 @@ h6 {
 input[type="checkbox"] {
     margin-right: 10px;
 }
+
