@@ -63,6 +63,7 @@
         <div id="chart-card">
             <canvas id="disasterChart"></canvas>
         </div>
+        
     </div>
 
     <!-- Map Script -->
@@ -95,47 +96,98 @@
 
         let disasterChart; 
 
-        function updatePieChart(data, title) {
-            const ctx = document.getElementById('disasterChart').getContext('2d');
+        // function updatePieChart(data, title) {
+        //     const ctx = document.getElementById('disasterChart').getContext('2d');
 
-            if (disasterChart) {
-                disasterChart.data.labels = Object.keys(data);
-                disasterChart.data.datasets[0].data = Object.values(data);
-                disasterChart.options.title.text = title.charAt(0).toUpperCase() + title.slice(1); // Capitalize the first letter
-                disasterChart.update();
-            } else {
-                disasterChart = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                        labels: Object.keys(data),
-                        datasets: [{
-                            data: Object.values(data),
-                            backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
-                            borderColor: '#ffffff',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: true,
-                        title: { display: true, text: title.charAt(0).toUpperCase() + title.slice(1), fontColor: '#333', fontSize: 18 },
-                        legend: { position: 'top', labels: { boxWidth: 10, padding: 2, fontColor: '#333' } },
-                        layout: { padding: { left: 0, right: 0, top: 0, bottom: 0 } }
-                    }
-                });
+        //     if (disasterChart) {
+        //         disasterChart.data.labels = Object.keys(data);
+        //         disasterChart.data.datasets[0].data = Object.values(data);
+        //         disasterChart.options.title.text = title.charAt(0).toUpperCase() + title.slice(1); // Capitalize the first letter
+        //         disasterChart.update();
+        //     } else {
+        //         disasterChart = new Chart(ctx, {
+        //             type: 'pie',
+        //             data: {
+        //                 labels: Object.keys(data),
+        //                 datasets: [{
+        //                     data: Object.values(data),
+        //                     backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+        //                     borderColor: '#ffffff',
+        //                     borderWidth: 1
+        //                 }]
+        //             },
+        //             options: {
+        //                 responsive: true,
+        //                 maintainAspectRatio: true,
+        //                 title: { display: true, text: title.charAt(0).toUpperCase() + title.slice(1), fontColor: '#333', fontSize: 18 },
+        //                 legend: { position: 'top', labels: { boxWidth: 10, padding: 2, fontColor: '#333' } },
+        //                 layout: { padding: { left: 0, right: 0, top: 0, bottom: 0 } }
+        //             }
+        //         });
+        //     }
+        // }
+
+        function updatePieChart(data, title) {
+    const ctx = document.getElementById('disasterChart').getContext('2d');
+
+    if (disasterChart) {
+        disasterChart.data.labels = Object.keys(data);
+        disasterChart.data.datasets[0].data = Object.values(data);
+        disasterChart.options.title.text = title.charAt(0).toUpperCase() + title.slice(1); // Capitalize the first letter
+        disasterChart.update();
+    } else {
+        disasterChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(data),
+                datasets: [{
+                    data: Object.values(data),
+                    backgroundColor: ['#4e60ef', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                    borderColor: '#ffffff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                title: { 
+                    display: true, 
+                    text: title.charAt(0).toUpperCase() + title.slice(1), 
+                    fontColor: '#333', 
+                    fontSize: 18,
+                    padding: 20 
+                },
+                legend: { 
+                    position: 'top', 
+                    labels: { 
+                        boxWidth: 10, 
+                        padding: 2, 
+                        fontColor: '#333' 
+                    } 
+                },
+                layout: { 
+                    padding: { 
+                        top: -20, // Add extra space between the title and legend
+                        left: 0, 
+                        right: 0, 
+                        bottom: 0 
+                    } 
+                }
             }
-        }
+        });
+    }
+}
 
         Object.keys(countries).forEach(function (key) {
             const country = countries[key];
             const marker = L.marker([country.lat, country.lon]).addTo(map);
 
             marker.on('click', function () {
-                updatePieChart(country.disasters, key);
+                updatePieChart(country.disasters, 'Disaster Summary of Last Century : ' + key);
             });
         });
 
-        updatePieChart(countries['Indonesia'].disasters, 'Indonesia');
+        updatePieChart(countries['Indonesia'].disasters, 'Disaster Summary of Last Century : ' + 'Indonesia');
     </script>
 </body>
 </html>
