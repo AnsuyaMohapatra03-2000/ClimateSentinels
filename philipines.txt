@@ -1,0 +1,38 @@
+<!-- Philippines Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Philippines</h5>
+                        
+                        <div class="image-aspect-wrapper">
+                            <div class="image-section">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/1920px-Flag_of_the_Philippines.svg.png" alt="Philippines Image">
+                            </div>
+
+                            <div class="aspects-causes-wrapper">
+                                <div class="aspect-section">
+                                    <h6>Aspects</h6>
+                                    <ul class="aspect-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Typhoons</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Floods</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Earthquakes</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Volcanic Eruptions</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Storm Surges</li>
+                                    </ul>
+                                </div>
+
+                                <div class="causes-section">
+                                    <h6>Causes</h6>
+                                    <ul class="causes-list">
+                                        <li><input type="checkbox" class="checkbox-inline"> Deforestation</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Climate Change</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Poor Infrastructure</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Urbanization</li>
+                                        <li><input type="checkbox" class="checkbox-inline"> Illegal Logging</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

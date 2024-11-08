@@ -197,3 +197,31 @@ h6 {
     height: 100%;
 }
 
+/* Style for aspect images */
+.aspect-image {
+    width: 100%; /* Adjust width as needed, e.g., 100%, 80px, etc. */
+    max-width: 80%; /*Set a maximum width */
+    height: 700px !important; /* Maintain aspect ratio */
+    align-items: center;
+    border-radius: 10px; /* Optional: round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for styling */
+}
+
+/* Center the content in the modal */
+#modalContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#modalInfo {
+    margin: 0 auto;
+    padding-left: 10% !important;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
