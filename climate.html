@@ -15,38 +15,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <!-- FONT STYLE LINK END  -->
     <style>
-        /* Set the modal to take up a larger percentage of the viewport height */
+      
         .modal-dialog {
-            max-width: 70vw; /* Set max-width to 90% of viewport width */
+            max-width: 70vw;
         }
     
         .modal-content {
-            max-height: 90vh; /* Set max-height to 90% of viewport height */
+            max-height: 90vh; 
         }
     
         .modal-body {
-            overflow-y: auto; /* Enables scrolling if content exceeds the modal's height */
+            overflow-y: auto; 
         }
     
-        /* Remove aspect ratio padding */
-.iframe-wrapper {
-    position: relative;
-    width: 100%;
-    height: 80vh; /* Set the iframe wrapper to occupy 80% of the viewport height */
-    overflow: hidden;
-}
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            height: 80vh; 
+            overflow: hidden;
+        }
 
-.iframe-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Make iframe occupy full height of the wrapper */
-    border: none;
-}
-
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
-    
 </head>
 <body>
 
@@ -64,7 +61,7 @@
     </nav>
     <br> 
   
-     <h1 class="heading">Climate Change</h1>
+     <h1 class="heading">Climate Change Aspects and Causes</h1>
      <!-- Card Layout Section -->
      <div class="container">
         <div class="row justify-content-center">
@@ -304,25 +301,23 @@
     <!-- JavaScript to handle checkbox selection and modal display -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Select all checkboxes in the Myanmar card with the class 'myanmar-checkbox'
+        
         const myanmarCheckboxes = document.querySelectorAll('.myanmar-checkbox');
 
         myanmarCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function () {
                 if (this.checked) {
-                    // Get the data attributes for image/iframe content and info
+                    
                     const contentHtml = this.getAttribute('data-image');
                     const infoText = this.getAttribute('data-info');
 
-                    // Update the modal with the specific content and information
+                    
                     document.getElementById('modalContent').innerHTML = contentHtml;
                     document.getElementById('modalInfo').textContent = infoText;
 
-                    // Show the modal
                     const myanmarModal = new bootstrap.Modal(document.getElementById('myanmarModal'));
                     myanmarModal.show();
 
-                    // Uncheck the checkbox after displaying the modal
                     this.checked = false;
                 }
             });

@@ -1,31 +1,26 @@
 body {
     background-color: #e1e5f5;
     color: #333;
-    /* font-family: 'Arial', sans-serif; */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
    font-family: "Playfair Display", serif;
    font-optical-sizing: auto;
    font-weight: 400;
    font-style: normal;
 }
 
-/* Navbar Styling */
 nav {
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 8px 20px; */
     padding-top: 15px;
     padding-left: 20px;
     background: linear-gradient(90deg, #415ff9 0%, #6a7dfe 100%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
-    /* border-radius: 20px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); 
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -58,20 +53,17 @@ nav {
     border-radius: 5px;
 }
 
-/* Enhanced hover effect */
 .nav-links a:hover {
     background-color: #3742c8;
     color: #ffffff;
     box-shadow: 0 4px 8px rgba(55, 66, 200, 0.4);
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05); 
 }
 
 h1 {
     text-align: center;
     color: #333;
-    /* margin-top: 20px; */
     font-size: 18px;
-    /* margin-bottom: 20px; */
 }
 
 .container {
@@ -169,14 +161,13 @@ h6 {
 }
 
 .heading {
-    /* font-family: 'Playfair Display', serif; */
     text-align: center;
-    font-size: 40px; /* Make the title large */
-    color: #415ff9; /* Add an attractive color */
-    font-weight: 900; /* Make it bold */
+    font-size: 40px;
+    color: #415ff9;
+    font-weight: 900;
     margin-top: 20px;
     margin-bottom: 30px;
-    letter-spacing: 2px; /* Adds spacing between letters */
+    letter-spacing: 2px;
 }
 
 .heading::after {
@@ -184,11 +175,10 @@ h6 {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #ffce56; /* Accent color for underline effect */
-    margin: 10px auto 0; /* Center the line below the title */
+    background-color: #ffce56; 
+    margin: 10px auto 0; 
 }
 
-/* Center the iframe within the modal */
 .iframe-wrapper {
     display: flex;
     justify-content: center;
@@ -197,17 +187,15 @@ h6 {
     height: 100%;
 }
 
-/* Style for aspect images */
 .aspect-image {
-    width: 40%; /* Adjust width as needed, e.g., 100%, 80px, etc. */
-    max-width: 80%; /*Set a maximum width */
-    height: 8% !important; /* Maintain aspect ratio */
+    width: 40%; 
+    max-width: 80%; 
+    height: 8% !important; 
     align-items: center;
-    border-radius: 10px; /* Optional: round the corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for styling */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Center the content in the modal */
 #modalContent {
     display: flex;
     justify-content: center;

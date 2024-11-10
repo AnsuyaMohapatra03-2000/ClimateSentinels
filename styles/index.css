@@ -3,8 +3,6 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    
-    /* font-size: 16px; */
     color: #333;
     background-color: #f8f9fd;
     font-weight: 600;
@@ -15,18 +13,14 @@ body {
     flex-direction: column;
 } 
 
-
-/* Navbar Styling */
 nav {
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding-top: 5px; */
-    /* padding-top: 10px; updated padding to match climate.css */
     padding-left: 20px;
     background: linear-gradient(90deg, #415ff9 0%, #6a7dfe 100%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); 
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -42,7 +36,6 @@ nav {
     list-style: none;
     display: flex;
     gap: 20px;
-    /* height: 80%; */
 }
 
 .nav-links li {
@@ -64,16 +57,13 @@ nav {
     border-radius: 5px;
 }
 
-/* Enhanced hover effect */
 .nav-links a:hover {
     background-color: #3742c8;
     color: #ffffff;
     box-shadow: 0 6px 8px rgba(55, 66, 200, 0.4);
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05); 
 }
 
-
-/* Main Section */
 .main-content {
     display: flex;
     justify-content: center;
@@ -83,7 +73,6 @@ nav {
     flex-grow: 1;
 }
 
-/* Map container */
 #map-container {
     flex-grow: 1;
     width: 60%;
@@ -99,7 +88,6 @@ nav {
     height: 100%;
 }
 
-/* Pie chart card */
 #chart-card {
     width: 30%;
     height: 92%;
@@ -113,14 +101,12 @@ nav {
     overflow: hidden;
 }
 
-/* Chart canvas */
 .chartjs-render-monitor {
     display: block !important; 
     height: 60% !important;
     width: 110% !important;
 }
 
-/* Footer Styling */
 .footer {
     background-color: #415ff9;
     padding: 10px;
@@ -129,7 +115,6 @@ nav {
     font-size: 14px;
 }
 
-/* Topic and Image Section */
 .topic-image-section {
     display: flex;
     flex-direction: column;
@@ -137,7 +122,7 @@ nav {
     margin-bottom: 20px;
     text-align: center;
     padding: 20px;
-    background-color: #f2f4fc; /* Light background for contrast */
+    background-color: #f2f4fc; 
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -161,7 +146,7 @@ nav {
     text-align: center;
     font-size: 24px;
     color: #333;
-    margin-bottom: 10px; /* Adjusts spacing between title and chart card */
+    margin-bottom: 10px; 
 }
 
 #chart-title-container {
@@ -182,20 +167,18 @@ nav {
     margin: 0;
 }
 
-/* Main Banner Heading Style */
 .main-banner-heading {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
-    color: #415ff9; /* Blue accent matching the theme */
+    color: #415ff9; 
     margin: 10px 0;
-    text-shadow: 1px 1px 5px rgba(65, 95, 249, 0.3); /* Light shadow for subtle emphasis */
+    text-shadow: 1px 1px 5px rgba(65, 95, 249, 0.3); 
 }
 
-/* Subheading Style */
 .main-subheading {
     font-size: 1.2rem;
-    color: #555555; /* Subtle dark gray for contrast */
+    color: #555555; 
     text-align: center;
     max-width: 90%;
     margin: 0 auto 20px;
@@ -203,15 +186,14 @@ nav {
     font-weight: 500;
 }
 
-/* Topic Image Section Style */
 .topic-image-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px;
-    background-color: #f8f9fd; /* Light background to match theme */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #f8f9fd; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); 
     border-radius: 10px;
     margin-bottom: 30px;
 }
@@ -223,22 +205,14 @@ nav {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Title Section
-.title-section {
-    text-align: center;
-    margin: 20px 0;
-} */
-
 .title-section  {
-    /* font-family: 'Playfair Display', serif; */
     text-align: center;
-    font-size: 40px; /* Make the title large */
-    color: #415ff9; /* Add an attractive color */
-    font-weight: 900; /* Make it bold */
+    font-size: 40px;
+    color: #415ff9; 
+    font-weight: 900;
     margin-top: 20px;
     margin-bottom: 30px;
-    letter-spacing: 2px; /* Adds spacing between letters */
+    letter-spacing: 2px; 
 }
 
 .title-section::after {
@@ -246,8 +220,8 @@ nav {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #ffce56; /* Accent color for underline effect */
-    margin: 10px auto 0; /* Center the line below the title */
+    background-color: #ffce56; 
+    margin: 10px auto 0;
 }
 
 .project-title {
@@ -257,7 +231,6 @@ nav {
     text-shadow: 1px 1px 4px rgba(65, 95, 249, 0.2);
 }
 
-/* Main Content Section */
 .content-section {
     display: flex;
     justify-content: space-around;

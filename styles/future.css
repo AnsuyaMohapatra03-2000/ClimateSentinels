@@ -1,23 +1,17 @@
-/* Style for small images in tabs */
 .img {
     width: 20px !important;
     height: auto;
     margin: 10px;
 }
 
-/* Adjust the width of the accordion container */
 .container {
-    max-width: 900px; /* Wider container */
+    max-width: 900px; 
     margin: 0 auto;
 }
 
 .nav-tabs {
     width: 100%;
 }
-
-
-/* NAVBAR STYLING STARTS */
-
 
 body {
     margin: 0;
@@ -27,13 +21,11 @@ body {
     font-family: "Playfair Display", serif;
 }
 
-/* Navbar Styling */
 nav {
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding-top: 15px; */
     padding-left: 20px;
     background: linear-gradient(90deg, #415ff9 0%, #6a7dfe 100%);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
@@ -89,14 +81,13 @@ nav {
 /* HEADING STARTS */
 
 .heading {
-    /* font-family: 'Playfair Display', serif; */
     text-align: center;
-    font-size: 40px; /* Make the title large */
-    color: #415ff9; /* Add an attractive color */
-    font-weight: 900; /* Make it bold */
+    font-size: 40px; 
+    color: #415ff9; 
+    font-weight: 900; 
     margin-top: 20px;
     margin-bottom: 30px;
-    letter-spacing: 2px; /* Adds spacing between letters */
+    letter-spacing: 2px; 
 }
 
 .heading::after {
@@ -104,14 +95,12 @@ nav {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #ffce56; /* Accent color for underline effect */
-    margin: 10px auto 0; /* Center the line below the title */
+    background-color: #ffce56; 
+    margin: 10px auto 0; 
 }
 
 /* HEADING ENDS */
 
-
-/* Base styling */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -152,12 +141,10 @@ h1 {
     margin: 10px auto 0;
 }
 
-/* Navbar Styling */
 nav {
     width: 100%;
     text-transform: uppercase;
     background: linear-gradient(90deg, #415ff9 0%, #6a7dfe 100%);
-    /* padding: 10px 20px; */
     padding-left: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -199,16 +186,13 @@ nav h1 {
     box-shadow: 0 4px 8px rgba(55, 66, 200, 0.4);
 }
 
-/* Container styling */
 .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* max-width: 700px; */
     width: 250% !important;
 }
 
-/* Disaster Section Styling */
 .disaster-section {
     background-color: #ffffff;
     border-radius: 12px;
@@ -263,16 +247,6 @@ nav h1 {
     box-shadow: 0 4px 8px rgba(55, 66, 200, 0.4);
 }
 
-
-/* NEW DESIGN */
-
-/* Base styling */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: "Playfair Display", serif;
     background-color: #e1e5f5;
@@ -301,7 +275,6 @@ body {
     margin: 10px auto 0;
 }
 
-/* Accordion Styling */
 .accordion-item {
     background-color: #ffffff;
     border-radius: 8px;
@@ -327,7 +300,6 @@ body {
     color: #333;
 }
 
-/* Disaster Buttons */
 .disaster-buttons {
     display: flex;
     gap: 10px;
@@ -348,15 +320,6 @@ body {
 .country-btn:hover {
     background-color: #3742c8;
     box-shadow: 0 4px 8px rgba(55, 66, 200, 0.4);
-}
-
-/* new new  */
-
-/* Base styling */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -387,7 +350,6 @@ body {
     margin: 10px auto 0;
 }
 
-/* Accordion Styling */
 .accordion-item {
     background-color: #ffffff;
     border-radius: 8px;
@@ -414,7 +376,6 @@ body {
     padding: 20px;
 }
 
-/* Tab Styling */
 .nav-tabs .nav-link {
     color: #415ff9;
     font-weight: 600;
@@ -431,7 +392,6 @@ body {
     background-color: #e0e0e0;
 }
 
-/* Tab Content Styling */
 .tab-content {
     margin-top: 15px;
 }

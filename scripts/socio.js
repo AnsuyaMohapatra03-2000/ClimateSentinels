@@ -147,39 +147,37 @@ const modalData = {
 };
 
 
-// Event listeners for modal buttons
 buttons.forEach(button => {
     button.addEventListener("click", function () {
+
         const category = this.getAttribute("data-category");
         const disasterTitle = this.closest('.disaster-content').querySelector('.disaster-title').textContent;
         const disasterData = modalData[disasterTitle][category];
         
-        // Show modal and populate with appropriate data
+      
         modal.style.display = "flex";
         modalTitle.textContent = `Impact of ${category.charAt(0).toUpperCase() + category.slice(1)} in ${disasterTitle}`;
         modalImage.src = disasterData.image;
-        modalText.innerHTML = disasterData.text; // Use innerHTML to render lists
+        modalText.innerHTML = disasterData.text; 
         
-        // Reset slide index to 0 when opening modal
         slideIndex = 0;
         showSlides(slideIndex);
     });
 });
 
 
-// Close modal on span click
 span.onclick = function () {
     modal.style.display = "none";
 };
 
-// Close modal if clicking outside of the modal content
+
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 };
 
-// Slideshow functionality
+
 const arrows = document.querySelectorAll(".arrow");
 let slideIndex = 0;
 
@@ -195,7 +193,7 @@ function showSlides(n) {
     slides[slideIndex].style.display = "block";
 }
 
-// Arrow navigation for slideshow
+
 arrows.forEach(arrow => {
     arrow.addEventListener("click", function () {
         if (this.classList.contains("left")) {
